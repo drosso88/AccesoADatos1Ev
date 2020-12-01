@@ -1,0 +1,63 @@
+<ClinicaVeterinaria xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:noNamespaceSchemaLocation="LibrosEsquema.xsd">
+    <perro chip="2783929173803873">
+        <fecha_nacimiento>21-11-2010</fecha_nacimiento>
+        <raza>Mestizo de podenco</raza>
+        <nombre>Tesa</nombre>
+        <propietario dni="38749246A">
+                <nombreProp>Elena</nombreProp>
+                <primerApellido>Nito</primerApellido>
+                <segundoApellido>Del Bosque</segundoApellido>
+        </propietario>
+        <consulta>
+            <descripcion>Vacuna de la rabia</descripcion>
+               <fecha>21-11-2020</fecha>
+               <precio>10€</precio> 
+        </consulta>   
+    </perro>
+    <perro chip="87343747475345">
+        <fecha_nacimiento>20-11-2018</fecha_nacimiento>
+        <raza>Mestiza</raza>
+        <nombre>Tesa</nombre>
+        <propietario dni="121234567A">
+                <nombreProp>Rocio</nombreProp>
+                <primerApellido>Tu</primerApellido>
+                <segundoApellido>Alumna</segundoApellido>
+        </propietario>
+        <consulta >
+            <descripcion>Corte de pelo</descripcion>
+            <fecha>10-01-2020</fecha>
+            <precio>20€</precio>
+        </consulta>    
+    </perro>
+     <perro chip="32765875">
+        <fecha_nacimiento>3-11-2020</fecha_nacimiento>
+        <raza>Pastor Aleman</raza>
+        <nombre>Yeniséi</nombre>
+        <propietario dni="Y1234567A">
+                <nombreProp>Igor</nombreProp>
+                <primerApellido>Elde</primerApellido>
+                <segundoApellido>Clase</segundoApellido>
+        </propietario>
+        <consulta>
+            <descripcion>Tratamiento alergia</descripcion>
+             <fecha>21-04-2020</fecha>
+            <precio>40€</precio>
+        </consulta>   
+    </perro>
+     <perro chip="94756587567">
+        <fecha_nacimiento>25-12-2014</fecha_nacimiento>
+        <raza>Mestizo de Pitbull</raza>
+        <nombre>Claus</nombre>
+        <propietario dni="12434567A">
+                <nombreProp>Jose</nombreProp>
+                <primerApellido>Garcia</primerApellido>
+                <segundoApellido>Garcia</segundoApellido>
+        </propietario>
+        <consulta>
+            <descripcion>cesión de chip</descripcion>
+                <fecha>27-11-2020</fecha>
+                 <precio>22€</precio>
+        </consulta>
+    </perro>
+</ClinicaVeterinaria>

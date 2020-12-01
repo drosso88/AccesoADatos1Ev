@@ -1,0 +1,40 @@
+<xsd:schema attributeFormDefault="unqualified" elementFormDefault="qualified"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    <xsd:element name = "ClinicaVeterinaria">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name = "perro" maxOccurs="unbounded" minOccurs="0">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element type = "xsd:string" name = "fecha_nacimiento"/>
+                            <xsd:element type = "xsd:string" name = "raza"/>
+                            <xsd:element type = "xsd:string" name = "nombre"/>
+                            <xsd:element name ="propietario">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element type = "xsd:string" name = "nombreProp"/>
+                                        <xsd:element type = "xsd:string" name = "primerApellido"/>
+                                        <xsd:element type = "xsd:string" name = "segundoApellido"/>
+                                        <xsd:element type = "xsd:string" name = "segundoApellido"/>
+                                    </xsd:sequence>
+                                    <xsd:attribute type="xsd:string" name="dni" use="optional"/>
+                                </xsd:complexType>
+                            </xsd:element>
+                            <xsd:element name = "consulta">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element type = "xsd:string" name = "descripcion"/>
+                                        <xsd:element type = "xsd:string" name = "fecha"/>
+                                        <xsd:element type = "xsd:string" name = "precio"/>
+                                        <xsd:element type = "xsd:string" name = "precio"/>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                        <xsd:attribute type="xsd:long" name="chip" use="optional"/>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>
