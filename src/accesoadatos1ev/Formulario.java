@@ -35,6 +35,7 @@ public class Formulario extends javax.swing.JFrame {
         MostrarDocXML = new javax.swing.JTextArea();
         btnMostrar = new java.awt.Button();
         mensajero = new javax.swing.JLabel();
+        btnModificar = new java.awt.Button();
         jMenuBar1 = new javax.swing.JMenuBar();
         AbrirDOC = new javax.swing.JMenu();
         MenuItemSeleccionDOC = new javax.swing.JMenuItem();
@@ -51,6 +52,16 @@ public class Formulario extends javax.swing.JFrame {
         btnMostrar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMostrarActionPerformed(evt);
+            }
+        });
+
+        btnModificar.setActionCommand("Modificar\n");
+        btnModificar.setEnabled(false);
+        btnModificar.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        btnModificar.setLabel("Modificar");
+        btnModificar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnModificarActionPerformed(evt);
             }
         });
 
@@ -81,8 +92,10 @@ public class Formulario extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(MostrarDoc, javax.swing.GroupLayout.PREFERRED_SIZE, 408, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(69, 69, 69)
-                .addComponent(btnMostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(75, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnMostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(105, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(mensajero, javax.swing.GroupLayout.PREFERRED_SIZE, 465, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -97,9 +110,13 @@ public class Formulario extends javax.swing.JFrame {
                     .addComponent(MostrarDoc, javax.swing.GroupLayout.PREFERRED_SIZE, 414, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(12, 12, 12)
-                        .addComponent(btnMostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(32, Short.MAX_VALUE))
+                        .addComponent(btnMostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(110, 110, 110)
+                        .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(61, Short.MAX_VALUE))
         );
+
+        btnModificar.getAccessibleContext().setAccessibleName("Modificar");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -120,9 +137,11 @@ public class Formulario extends javax.swing.JFrame {
                 this.mensajero.setText("Error al mostrar");
                 System.out.println("Error al crear SAX");
                 this.btnMostrar.setEnabled(false);
+                this.btnModificar.setEnabled(false);
             } else {
                 this.mensajero.setText("Hay un documento seleccionado, para visualizarlo pulsa el botón");
                 this.btnMostrar.setEnabled(true);
+                this.btnModificar.setEnabled(false);
                
             }
         }
@@ -133,11 +152,17 @@ public class Formulario extends javax.swing.JFrame {
         try {
             salida = gesSAX.reccorrerSAX();
               this.MostrarDocXML.setText(salida);
+              this.btnModificar.setEnabled(true);
         } catch (Exception ex) {
             Logger.getLogger(Formulario.class.getName()).log(Level.SEVERE, null, ex);
         }
   
     }//GEN-LAST:event_btnMostrarActionPerformed
+
+    private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
+        VentanaModificar vm = new VentanaModificar(this, false);
+        vm.setVisible(true);
+    }//GEN-LAST:event_btnModificarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -179,6 +204,7 @@ public class Formulario extends javax.swing.JFrame {
     private javax.swing.JMenuItem MenuItemSeleccionDOC;
     private javax.swing.JScrollPane MostrarDoc;
     private javax.swing.JTextArea MostrarDocXML;
+    private java.awt.Button btnModificar;
     private java.awt.Button btnMostrar;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JLabel mensajero;
