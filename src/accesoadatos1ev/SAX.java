@@ -23,6 +23,7 @@ public class SAX {
     SAXParser parser;
     ManejadorSAX sh;
     File ficheroXML;
+   
 
     public int abrirXMLSAX(File fichero) {
         try {
@@ -68,21 +69,39 @@ class ManejadorSAX extends DefaultHandler {
 
     @Override
     public void endElement(String uri, String localName, String qName) throws SAXException {
-            if (qName.equals("Perro")) {
-                cadena_resultado= cadena_resultado + "------------------\n";
+            if (qName.equals("perro")) {
+                cadena_resultado= cadena_resultado + "-------------------------------------------------\n";
             }
     }
 
     @Override
     public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
-        if (qName.equals("Perro")) {
-            cadena_resultado = cadena_resultado + "chip: " + attributes.getValue(attributes.getQName(0).trim());
+        if (qName.equals("perro")) {
+            cadena_resultado = cadena_resultado + "El número de chip es: " + attributes.getValue(attributes.getQName(0).trim());
 
-        } else if (qName.equals("Titulo")) {
-            cadena_resultado = cadena_resultado + "Raza: ".trim();
-
-        } else if (qName.equals("Autor")) {
-            cadena_resultado = cadena_resultado + "Nombre: ".trim();
+        } else if (qName.equals("raza")) {
+            cadena_resultado = cadena_resultado + "\t" + "La raza es: ".trim();
+        } else if (qName.equals("fecha_nacimiento")) {
+            cadena_resultado = cadena_resultado + "\t" + "Nacido el: ".trim();
+        } else if (qName.equals("nombre")) {
+            cadena_resultado = cadena_resultado + "\t" + "El nombre de la mascota es: ".trim();
+        } else if (qName.equals("propietario")) {
+            cadena_resultado = cadena_resultado + "El propietario es: ";
+            cadena_resultado = cadena_resultado + ("\t\nDNI: " + attributes.getValue(attributes.getQName(0)).trim());
+        } else if (qName.equals("nombreProp")) {
+            cadena_resultado = cadena_resultado + "\t" + ("Nombre: ").trim();
+        } else if (qName.equals("primerApellido")) {
+            cadena_resultado = cadena_resultado + "\t" + ("Primer Apellido: ").trim();
+        } else if (qName.equals("segundoApellido")) {
+            cadena_resultado = cadena_resultado + "\t" + ("Segundo Apellido: ").trim();
+        } else if (qName.equals("consulta")) {
+            cadena_resultado = cadena_resultado + "Detalle de la visita: ";
+        } else if (qName.equals("fecha")) {
+            cadena_resultado = cadena_resultado + "\t" + ("Fecha: ").trim();
+        } else if (qName.equals("descripcion")) {
+            cadena_resultado = cadena_resultado + "\t" + ("El motivo de la consulta fue: ").trim();
+        } else if (qName.equals("precio")) {
+            cadena_resultado = cadena_resultado + "\t" + ("Precio del servicio: ").trim();
         }
     }
 }
