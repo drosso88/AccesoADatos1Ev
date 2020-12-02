@@ -39,6 +39,7 @@ public class Formulario extends javax.swing.JFrame {
         mensajero = new javax.swing.JLabel();
         btnModificar = new java.awt.Button();
         btnBuscar = new java.awt.Button();
+        btnBuscar1 = new java.awt.Button();
         jMenuBar1 = new javax.swing.JMenuBar();
         AbrirDOC = new javax.swing.JMenu();
         MenuItemSeleccionDOC = new javax.swing.JMenuItem();
@@ -78,6 +79,16 @@ public class Formulario extends javax.swing.JFrame {
             }
         });
 
+        btnBuscar1.setActionCommand("Modificar\n");
+        btnBuscar1.setEnabled(false);
+        btnBuscar1.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        btnBuscar1.setLabel("Añadir registro:");
+        btnBuscar1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscar1ActionPerformed(evt);
+            }
+        });
+
         AbrirDOC.setText("Abrir XML");
         AbrirDOC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -108,7 +119,8 @@ public class Formulario extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnMostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBuscar1, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(105, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -127,8 +139,10 @@ public class Formulario extends javax.swing.JFrame {
                         .addComponent(btnMostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(25, 25, 25)
                         .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(26, 26, 26)
-                        .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(24, 24, 24)
+                        .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(21, 21, 21)
+                        .addComponent(btnBuscar1, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(61, Short.MAX_VALUE))
         );
 
@@ -187,6 +201,10 @@ public class Formulario extends javax.swing.JFrame {
         
     }//GEN-LAST:event_btnBuscarActionPerformed
 
+    private void btnBuscar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscar1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnBuscar1ActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -228,6 +246,7 @@ public class Formulario extends javax.swing.JFrame {
     private javax.swing.JScrollPane MostrarDoc;
     private javax.swing.JTextArea MostrarDocXML;
     private java.awt.Button btnBuscar;
+    private java.awt.Button btnBuscar1;
     private java.awt.Button btnModificar;
     private java.awt.Button btnMostrar;
     private javax.swing.ButtonGroup buttonGroup1;
