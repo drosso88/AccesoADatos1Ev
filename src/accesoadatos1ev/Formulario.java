@@ -9,6 +9,7 @@ import java.io.File;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -31,11 +32,13 @@ public class Formulario extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        buttonGroup1 = new javax.swing.ButtonGroup();
         MostrarDoc = new javax.swing.JScrollPane();
         MostrarDocXML = new javax.swing.JTextArea();
         btnMostrar = new java.awt.Button();
         mensajero = new javax.swing.JLabel();
         btnModificar = new java.awt.Button();
+        btnBuscar = new java.awt.Button();
         jMenuBar1 = new javax.swing.JMenuBar();
         AbrirDOC = new javax.swing.JMenu();
         MenuItemSeleccionDOC = new javax.swing.JMenuItem();
@@ -62,6 +65,16 @@ public class Formulario extends javax.swing.JFrame {
         btnModificar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnModificarActionPerformed(evt);
+            }
+        });
+
+        btnBuscar.setActionCommand("Modificar\n");
+        btnBuscar.setEnabled(false);
+        btnBuscar.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        btnBuscar.setLabel("Buscar");
+        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarActionPerformed(evt);
             }
         });
 
@@ -94,7 +107,8 @@ public class Formulario extends javax.swing.JFrame {
                 .addGap(69, 69, 69)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(btnMostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(105, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -111,8 +125,10 @@ public class Formulario extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addComponent(btnMostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(110, 110, 110)
-                        .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(25, 25, 25)
+                        .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(26, 26, 26)
+                        .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(61, Short.MAX_VALUE))
         );
 
@@ -138,10 +154,12 @@ public class Formulario extends javax.swing.JFrame {
                 System.out.println("Error al crear SAX");
                 this.btnMostrar.setEnabled(false);
                 this.btnModificar.setEnabled(false);
+                this.btnBuscar.setEnabled(false);
             } else {
                 this.mensajero.setText("Hay un documento seleccionado, para visualizarlo pulsa el botón");
                 this.btnMostrar.setEnabled(true);
                 this.btnModificar.setEnabled(false);
+                this.btnBuscar.setEnabled(false);
                
             }
         }
@@ -153,6 +171,7 @@ public class Formulario extends javax.swing.JFrame {
             salida = gesSAX.reccorrerSAX();
               this.MostrarDocXML.setText(salida);
               this.btnModificar.setEnabled(true);
+              this.btnBuscar.setEnabled(true);
         } catch (Exception ex) {
             Logger.getLogger(Formulario.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -163,6 +182,10 @@ public class Formulario extends javax.swing.JFrame {
         VentanaModificar vm = new VentanaModificar(this, false);
         vm.setVisible(true);
     }//GEN-LAST:event_btnModificarActionPerformed
+
+    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+        
+    }//GEN-LAST:event_btnBuscarActionPerformed
 
     /**
      * @param args the command line arguments
@@ -204,8 +227,10 @@ public class Formulario extends javax.swing.JFrame {
     private javax.swing.JMenuItem MenuItemSeleccionDOC;
     private javax.swing.JScrollPane MostrarDoc;
     private javax.swing.JTextArea MostrarDocXML;
+    private java.awt.Button btnBuscar;
     private java.awt.Button btnModificar;
     private java.awt.Button btnMostrar;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JLabel mensajero;
     // End of variables declaration//GEN-END:variables
