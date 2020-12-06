@@ -5,12 +5,23 @@
  */
 package accesoadatos1ev;
 
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JFileChooser;
+
 /**
  *
  * @author rocio
  */
 public class VentanaModificar extends javax.swing.JDialog {
+    JAXB miGestorJAXB = new JAXB();
+    abrirFichero af = new abrirFichero();
+    guardarFichero guardaModificacion =new guardarFichero();
 
+     
     /**
      * Creates new form VentanaModificar
      */
@@ -40,16 +51,16 @@ public class VentanaModificar extends javax.swing.JDialog {
         jLabel2 = new javax.swing.JLabel();
         label7 = new java.awt.Label();
         label8 = new java.awt.Label();
-        textField1 = new java.awt.TextField();
-        textField2 = new java.awt.TextField();
-        textField3 = new java.awt.TextField();
-        textField4 = new java.awt.TextField();
-        textField5 = new java.awt.TextField();
-        textField6 = new java.awt.TextField();
-        textField7 = new java.awt.TextField();
-        textField8 = new java.awt.TextField();
-        textField9 = new java.awt.TextField();
-        textField10 = new java.awt.TextField();
+        NuevoNombre = new java.awt.TextField();
+        antiguo1Ap = new java.awt.TextField();
+        antiguoNombre = new java.awt.TextField();
+        nuevo1ap = new java.awt.TextField();
+        nuevo2ap = new java.awt.TextField();
+        antiguo2ap = new java.awt.TextField();
+        nuevodni = new java.awt.TextField();
+        antiguodni = new java.awt.TextField();
+        nuevoNperro = new java.awt.TextField();
+        antiguoNPerro = new java.awt.TextField();
         btnModificar = new java.awt.Button();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -79,7 +90,6 @@ public class VentanaModificar extends javax.swing.JDialog {
         label8.setText("Dato actual:");
 
         btnModificar.setActionCommand("Modificar\n");
-        btnModificar.setEnabled(false);
         btnModificar.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         btnModificar.setLabel("Modificar");
         btnModificar.addActionListener(new java.awt.event.ActionListener() {
@@ -108,7 +118,7 @@ public class VentanaModificar extends javax.swing.JDialog {
                                         .addComponent(label8, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(202, 202, 202)
-                                        .addComponent(textField3, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(antiguoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 223, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(layout.createSequentialGroup()
                                         .addGap(27, 27, 27)
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -120,21 +130,21 @@ public class VentanaModificar extends javax.swing.JDialog {
                                                     .addComponent(label5, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
                                                 .addGap(18, 18, 18)
                                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(textField8, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                    .addComponent(antiguodni, javax.swing.GroupLayout.PREFERRED_SIZE, 226, javax.swing.GroupLayout.PREFERRED_SIZE)
                                                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                        .addComponent(textField6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE)
-                                                        .addComponent(textField2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))))
+                                                        .addComponent(antiguo2ap, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 223, Short.MAX_VALUE)
+                                                        .addComponent(antiguo1Ap, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))))
                                 .addGap(34, 34, 34))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(textField10, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(antiguoNPerro, javax.swing.GroupLayout.PREFERRED_SIZE, 229, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(78, 78, 78)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(textField9, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
+                            .addComponent(nuevoNperro, javax.swing.GroupLayout.DEFAULT_SIZE, 232, Short.MAX_VALUE)
                             .addComponent(label7, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textField1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(textField4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(textField5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(textField7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(NuevoNombre, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(nuevo1ap, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(nuevo2ap, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(nuevodni, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addGap(0, 23, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -155,33 +165,33 @@ public class VentanaModificar extends javax.swing.JDialog {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textField1, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textField3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(NuevoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(antiguoNombre, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textField2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addComponent(textField4, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(antiguo1Ap, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(nuevo1ap, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(label5, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textField5, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(nuevo2ap, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(textField7, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(nuevodni, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(textField6, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(antiguo2ap, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(textField8, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(antiguodni, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(28, 28, 28)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(textField9, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(textField10, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(nuevoNperro, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(antiguoNPerro, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
                 .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(27, 27, 27))
@@ -191,8 +201,30 @@ public class VentanaModificar extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnModificarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnModificarActionPerformed
-        VentanaModificar vm = new VentanaModificar();
-        vm.setVisible(true);
+          String salida;
+        try {
+             System.out.println(af.getRutaAuxiliar());
+        miGestorJAXB.abrirXML_JAXB(new File(af.getRutaAuxiliar()));
+        miGestorJAXB.recorrerJAXB();
+        miGestorJAXB.cambiarRegistro(antiguoNombre.getText(), NuevoNombre.getText());
+        miGestorJAXB.cambiarRegistro(antiguo1Ap.getText(), nuevo1ap.getText());
+        miGestorJAXB.cambiarRegistro(antiguo2ap.getText(), nuevo2ap.getText());
+        miGestorJAXB.cambiarRegistro(antiguodni.getText(), nuevodni.getText());
+        miGestorJAXB.cambiarRegistro(antiguoNPerro.getText(), nuevoNperro.getText());
+        miGestorJAXB.cerrarXML_JAXB(new File(af.getRutaAuxiliar()));
+            
+              
+              this.btnModificar.setEnabled(true);
+
+        } catch (Exception ex) {
+            Logger.getLogger(Formulario.class.getName()).log(Level.SEVERE, null, ex);
+        }
+  
+       
+ 
+        
+      
+       
     }//GEN-LAST:event_btnModificarActionPerformed
 
     /**
@@ -238,6 +270,12 @@ public class VentanaModificar extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private java.awt.TextField NuevoNombre;
+    private java.awt.TextField antiguo1Ap;
+    private java.awt.TextField antiguo2ap;
+    private java.awt.TextField antiguoNPerro;
+    private java.awt.TextField antiguoNombre;
+    private java.awt.TextField antiguodni;
     private java.awt.Button btnModificar;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -247,15 +285,36 @@ public class VentanaModificar extends javax.swing.JDialog {
     private java.awt.Label label5;
     private java.awt.Label label7;
     private java.awt.Label label8;
-    private java.awt.TextField textField1;
-    private java.awt.TextField textField10;
-    private java.awt.TextField textField2;
-    private java.awt.TextField textField3;
-    private java.awt.TextField textField4;
-    private java.awt.TextField textField5;
-    private java.awt.TextField textField6;
-    private java.awt.TextField textField7;
-    private java.awt.TextField textField8;
-    private java.awt.TextField textField9;
+    private java.awt.TextField nuevo1ap;
+    private java.awt.TextField nuevo2ap;
+    private java.awt.TextField nuevoNperro;
+    private java.awt.TextField nuevodni;
     // End of variables declaration//GEN-END:variables
+    
+    private File seleccionaFichero() {
+               File f = null;
+        JFileChooser fc = new JFileChooser();
+        fc.setMultiSelectionEnabled(false);//para seleccionar solo un archivo
+        //se abre el cuadro de dialogo de apertura
+        fc.setDialogType(JFileChooser.OPEN_DIALOG);
+        //que depende de lo que haga el usuario
+        int respuesta = fc.showOpenDialog(this);
+
+        if (respuesta == JFileChooser.APPROVE_OPTION) {
+            f = fc.getSelectedFile();
+        }
+        return f;
+    }
+        public void guardarJAXB(String textoGuardar, String rutaArchivo) {
+        try {
+
+            BufferedWriter bw = new BufferedWriter(new FileWriter(rutaArchivo));
+            bw.write(textoGuardar);
+
+            bw.close();
+
+        } catch (Exception ex) {
+            System.out.println("Error" + ex.getMessage());
+        }
+    }
 }

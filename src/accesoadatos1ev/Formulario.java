@@ -18,7 +18,7 @@ import javax.swing.JOptionPane;
 public class Formulario extends javax.swing.JFrame {
 
     SAX gesSAX = new SAX();
-    DOM gesDOM = new DOM();
+
     
     public Formulario() {
         initComponents();

@@ -12,6 +12,7 @@ import javax.xml.parsers.SAXParserFactory;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
+import perrosJava.ClinicaVeterinaria;
 
 /**
  *
@@ -23,6 +24,7 @@ public class SAX {
     SAXParser parser;
     ManejadorSAX sh;
     File ficheroXML;
+  
    
 
     public int abrirXMLSAX(File fichero) {
