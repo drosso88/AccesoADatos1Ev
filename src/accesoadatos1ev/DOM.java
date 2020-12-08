@@ -5,6 +5,9 @@
  */
 package accesoadatos1ev;
 
+import java.io.File;
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
@@ -16,7 +19,15 @@ import org.w3c.dom.Node;
  * @author rocio
  */
 public class DOM {
-    Document doc; //apuntador a la raiz del arbol
+   static Document doc; //apuntador a la raiz del arbol
+
+    public static Document getDoc() {
+        return doc;
+    }
+
+    public static void setDoc(Document doc) {
+        DOM.doc = doc;
+    }
     
       public int anadirDOM(String chip, String nombre, String raza, 
       String fechaNac, String nombreProp, String dni, String primerApellido, 
@@ -94,6 +105,21 @@ public class DOM {
 
             return 0;
 
+        } catch (Exception e) {
+            return -1;
+        }
+    }
+      public int abrirElXml(File file) {
+        doc = null;
+        try {
+            DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+            factory.setIgnoringComments(true);
+            factory.setIgnoringElementContentWhitespace(true);
+            DocumentBuilder builder = factory.newDocumentBuilder();
+            System.out.println(file.getName());
+            doc = builder.parse(file);
+            System.out.println(doc.getElementsByTagName("libro") + "<=========");
+            return 1;
         } catch (Exception e) {
             return -1;
         }

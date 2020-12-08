@@ -41,6 +41,7 @@ public class Formulario extends javax.swing.JFrame {
         btnModificar = new java.awt.Button();
         btnBuscar = new java.awt.Button();
         btnAnadir = new java.awt.Button();
+        btnRefrescar = new java.awt.Button();
         jMenuBar1 = new javax.swing.JMenuBar();
         AbrirDOC = new javax.swing.JMenu();
         MenuItemSeleccionDOC = new javax.swing.JMenuItem();
@@ -90,6 +91,15 @@ public class Formulario extends javax.swing.JFrame {
             }
         });
 
+        btnRefrescar.setEnabled(false);
+        btnRefrescar.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        btnRefrescar.setLabel("Refrescar");
+        btnRefrescar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnRefrescarActionPerformed(evt);
+            }
+        });
+
         AbrirDOC.setText("Abrir XML");
         AbrirDOC.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -121,7 +131,8 @@ public class Formulario extends javax.swing.JFrame {
                     .addComponent(btnMostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(btnAnadir, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(btnAnadir, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnRefrescar, javax.swing.GroupLayout.PREFERRED_SIZE, 148, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(105, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -142,7 +153,9 @@ public class Formulario extends javax.swing.JFrame {
                         .addComponent(btnModificar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(24, 24, 24)
                         .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(21, 21, 21)
+                        .addGap(16, 16, 16)
+                        .addComponent(btnRefrescar, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(23, 23, 23)
                         .addComponent(btnAnadir, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(61, Short.MAX_VALUE))
         );
@@ -208,6 +221,10 @@ public class Formulario extends javax.swing.JFrame {
         va.setVisible(true);
     }//GEN-LAST:event_btnAnadirActionPerformed
 
+    private void btnRefrescarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnRefrescarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnRefrescarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -252,6 +269,7 @@ public class Formulario extends javax.swing.JFrame {
     private java.awt.Button btnBuscar;
     private java.awt.Button btnModificar;
     private java.awt.Button btnMostrar;
+    private java.awt.Button btnRefrescar;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JLabel mensajero;
